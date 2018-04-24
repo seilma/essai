@@ -1,0 +1,74 @@
+@model Domain.Experience
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>Experience</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="ExperienceId" />
+        <div class="form-group">
+            <label asp-for="AddDate" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="AddDate" class="form-control" />
+                <span asp-validation-for="AddDate" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Note" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Note" class="form-control" />
+                <span asp-validation-for="Note" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="SpecialityId" class="control-label col-md-2"></label>
+            <div class="col-md-10">
+                <select asp-for="SpecialityId" class="form-control" asp-items="ViewBag.SpecialityId"></select>
+                <span asp-validation-for="SpecialityId" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <input asp-for="Valid" />
+                    <label asp-for="Valid"></label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="userId" class="control-label col-md-2"></label>
+            <div class="col-md-10">
+                <select asp-for="userId" class="form-control" asp-items="ViewBag.userId"></select>
+                <span asp-validation-for="userId" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+</body>
+</html>

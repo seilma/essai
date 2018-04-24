@@ -1,0 +1,39 @@
+@model hunterview.Models.JobCoordination
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+
+<div>
+    <h4>JobCoordination</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Adddate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Adddate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Approved)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Approved)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.JobCoordinationId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+</body>
+</html>
